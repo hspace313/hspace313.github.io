@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Human&Space</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM Plex Sans KR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;1,500;1,600&family=Roboto+Serif:ital,opsz,wght@0,8..144,400;0,8..144,500;0,8..144,600;1,8..144,400;1,8..144,500;1,8..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "IBM Plex Sans KR", sans-serif}
+h2{font-weight: 800}
+h3 {letter-spacing: 1px; font-family: "Poppins", sans-serif; font-weight: 600}
+h1, .w3-bar, h5, button{font-family: "Work Sans", sans-serif; font-weight: 200}
+h4 {font-family: "Work Sans", sans-serif;
+    text-align: left;
+    font-size: 30px;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 48;
+
+  font-size: 44px;
+  margin-top: -2px;
+  margin-left: -5px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $("#arrow").click(function() {
+
+    $('html, body').animate({
+        scrollTop: $("#grid1").offset().top
+    }, 0);
+  });
+});
+
+$(document).ready(function(){
+  $( ".discover" ).click(function() {
+    var x = $(window).scrollTop();
+     $('html, body').animate({ scrollTop: x + $(window).height() }) 
+  });
+
+});
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+
+
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    document.getElementsByClassName("w3-top")[0].style.backgroundColor = "rgb(255, 255, 255, 1)"
+    document.getElementById("logoimg").style.filter = "none"
+
+    for (i = 0; i < 4; i++) {
+      document.getElementsByClassName("navitem")[i].style.color = "rgb(0, 0, 0)"
+    }
+
+  } else {
+    document.getElementsByClassName("w3-top")[0].style.backgroundColor = "rgba(0, 0, 0, 0)"
+    document.getElementById("logoimg").style.filter = "brightness(600%)"
+
+    for (i = 0; i < 4; i++) {
+      document.getElementsByClassName("navitem")[i].style.color = "rgb(255, 255, 255)"
+    }
+
+  }
+}
+
+
+</script>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-left-align w3-medium" style="background-color: rgba(0, 0, 0, 0);">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-large w3-cobalt" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item"><img id="logoimg" src="images/logo.png"></a>
+    <a href="contact.html" class="w3-bar-item w3-hide-small navitem w3-right"><h5>Contact</h5></a>
+    <a href="culture.html" class="w3-bar-item w3-hide-small navitem w3-right"><h5>Culture</h5></a>
+    <a href="work.html" class="w3-bar-item w3-hide-small navitem w3-right"><h5>Work</h5></a>
+    <a href="about.html" class="w3-bar-item w3-hide-small navitem w3-right"><h5>About</h5></a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-medium">
+    <a href="about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
+    <a href="work.html" class="w3-bar-item w3-button w3-padding-large">Work</a>
+    <a href="culture.html" class="w3-bar-item w3-button w3-padding-large">Culture</a>
+    <a href="contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+  </div>
+</div>
+
+
+<!-- Header -->
+<header class="w3-container w3-center about" style="width: 100vw; height: 400px;">
+  <video class="background_v" autoplay muted loop style="width:100vw; height: 400px;">
+        <source src="images/clip01.mp4" type="video/mp4">
+  </video>
+  <div class="w3-auto">
+    <div class="w3-col m9, l8">
+      <h1 class="w3-text-white">About us</h1>
+    </div>
+  </div>
+</header>
+
+
+<!-- First Grid -->
+<section id="grid1-1" class="grid1-1 w3-container w3-text-black" style="padding-top: 120px; padding-bottom: 0px; padding-right: 0;">
+  <div class="w3-auto">
+    <h3 class="w3-padding-8 w3-margin-top w3-medium">Our Philosophy</h3>
+    <div class="w3-half left">
+      <h2 class="margin-right" >우리는 사람을 위한 공간을 기획하고 실현합니다</h2>
+    </div>
+    <div class="w3-half right" style="overflow: hidden;">
+    <h6 class="w3-padding-8 margin-right">사람과 공간은 항상 공존하며, 공간은 사람을 위해 존재합니다. 공간기획은 공간디자인의 의미와 목적을 가지게 하며, 공간디자인은 현대인들에게 라이프스타일을 향유할 수 있게 합니다. 이러한 공간기획과 공간디자인은 제품이상의 가치를 구현할 수 있으며, 곧 공간브랜드로 탄생합니다. 공간브랜드는 사람들에게 새로운 가치를 부여하고, 사람과 사람이 소통할 수 있게 합니다. 우리는 공간기획과 실현을 통해 사람들을 행복하게 할 수 있다고 믿습니다. <br><br> 21세기는 도시와 농어촌지역의 불균형, 구도심의 쇠퇴, 인구 감소, 고령화가 사회적 문제로 대두 되고 있으며, 이를 해결하기 위한 키워드는 바로 사람입니다. 우리는 사람이 어떻게 살 것인가? 누구와 살 것인가? 어디서 살 것인가? 무엇으로 행복할 것인가? 라는 끊임없는 사유를 통해 사람과 사람이 모일 수 있고, 소통하며 머물 수 있는 공간을 만들어 가고자 합니다. 사람과 공간은 항상 공존하므으로 우리는 사람을 위한 공간기획·공간디자인·공간브랜드사업을 펼쳐나가고 있습니다.</h6>
+
+    </div>
+
+    <span style="padding-bottom: 60px; border-bottom: solid black 2px; display: inline-block; width:100%;"></span>
+    <h3 class="w3-padding-8 w3-margin-top w3-medium">Team Structure</h3>
+    <div class="w3-content">
+         <img src="images/structure.png">
+    </div>
+
+    <span style="padding-bottom: 60px; border-bottom: solid black 2px; display: inline-block; width:100%;"></span>
+    <h3 class="w3-padding-8 w3-margin-top w3-medium">Our Partners</h3>
+    <div class="w3-auto" style="padding-bottom: 80px;">
+      <div class="w3-row">
+        <div class="w3-col m3 l3"><img src="images/logo1.png"></div>
+        <div class="w3-col m3 l3"><img src="images/logo2.png"></div>
+        <div class="w3-col m3 l3"><img src="images/logo0.jpeg"></div>
+        <div class="w3-col m3 l3"><img src="images/logo3.png"></div>
+      </div>
+
+      <div class="w3-row">
+        <div class="w3-col m3 l3"><img src="images/logo4.png"></div>
+        <div class="w3-col m3 l3"><img src="images/logo5.png"></div>
+        <div class="w3-col m3 l3"><img src="images/logo6.png"></div>
+        <div class="w3-col m3 l3"><img src="images/logo7.png"></div>
+      </div>
+
+      <div class="w3-row">
+        <div class="w3-col m3 l3"><img src="images/logo8.png"></div>
+        <div class="w3-col m3 l3"><img src="images/logo9.png"></div>
+        <div class="w3-col m3 l3"><img src="images/logo1.png"></div>
+        <div class="w3-col m3 l3"><img src="images/logo2.png"></div>
+      </div>
+    </div>
+
+  </div>
+  
+</section>
+
+<footer class="w3-container w3-padding-64 w3-black w3-center">  
+  <div class="w3-auto w3-left-align">
+    <div class="w3-half">
+      <p>(주)사람과공간</p>
+      <p>서울시 서초구 신반포로 313, 고암빌딩 4층 | 02-582-8862 | hs@hspace.co.kr</p>
+    </div>
+    <div class="w3-half w3-right-align">
+      <div class="w3-bar">
+        <a class="w3-bar-item w3-medium">About</a>
+        <a class="w3-bar-item w3-medium">Work</a>
+        <a class="w3-bar-item w3-medium">Culture</a>
+        <a class="w3-bar-item w3-medium">Contact</a>
+      </div>
+      <p class="w3-small" style="margin: 0; padding-right: 10px">Copyright ⓒ Human&Space. All Rights Reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function background() {
+
+}
+
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
