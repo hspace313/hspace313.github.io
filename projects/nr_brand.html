@@ -4,15 +4,17 @@
 <title>사람과공간 - 지역재생 전문기업, 지역개발 및 도시재생, 브랜딩, 지역역량강화</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="../w3.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500;600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,500;1,600&family=Roboto+Serif:ital,opsz,wght@0,8..144,400;0,8..144,500;0,8..144,600;1,8..144,400;1,8..144,500;1,8..144,600&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 <style>
+h1{font-weight: 500};
 h2{font-weight: 800}
 h3 {letter-spacing: 1px; font-family: "Poppins", sans-serif; font-weight: 600}
-h1, .w3-bar, h5, button{font-family: "Work Sans", sans-serif; font-weight: 400}
+.w3-bar, h5, button{font-family: "Work Sans", sans-serif; font-weight: 400}
 h4 {font-family: "Work Sans", sans-serif;
     text-align: left;
     font-size: 30px;
@@ -54,7 +56,7 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
 
 
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
     document.getElementsByClassName("w3-top")[0].style.backgroundColor = "rgb(255, 255, 255, 1)"
     document.getElementById("logoimg").style.filter = "none"
 
@@ -65,6 +67,14 @@ function scrollFunction() {
   } 
 }
 
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
 
 </script>
 </head>
@@ -74,38 +84,70 @@ function scrollFunction() {
 <div class="w3-top">
   <div class="w3-bar w3-left-align w3-medium" style="background-color: rgba(0, 0, 0, 0);">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-large w3-cobalt" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html" class="w3-bar-item"><img id="logoimg" style="filter: none;"src="images/logo.png"></a>
-    <a href="contact.html" class="w3-bar-item w3-hide-small w3-right"><h5>Contact</h5></a>
-    <a href="culture.html" class="w3-bar-item w3-hide-small w3-right"><h5>Culture</h5></a>
-    <a href="work.html" class="w3-bar-item w3-hide-small w3-right"><h5>Work</h5></a>
-    <a href="about.html" class="w3-bar-item w3-hide-small w3-right"><h5>About</h5></a>
+    <a href="../index.html" class="w3-bar-item"><img id="logoimg" style="filter: none;"src="../images/logo.png"></a>
+    <a href="../contact.html" class="w3-bar-item w3-hide-small w3-right"><h5>Contact</h5></a>
+    <a href="../culture.html" class="w3-bar-item w3-hide-small w3-right"><h5>Culture</h5></a>
+    <a href="../work.html" class="w3-bar-item w3-hide-small w3-right"><h5>Work</h5></a>
+    <a href="../about.html" class="w3-bar-item w3-hide-small w3-right"><h5>About</h5></a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-medium">
-    <a href="about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
-    <a href="work.html" class="w3-bar-item w3-button w3-padding-large">Work</a>
-    <a href="culture.html" class="w3-bar-item w3-button w3-padding-large">Culture</a>
-    <a href="contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+    <a href="../about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
+    <a href="../work.html" class="w3-bar-item w3-button w3-padding-large">Work</a>
+    <a href="../culture.html" class="w3-bar-item w3-button w3-padding-large">Culture</a>
+    <a href="../contact.html" class="w3-bar-item w3-button w3-padding-large">Contact</a>
   </div>
 </div>
 
 
 <!-- Header -->
-<header class="w3-container w3-center w3-white culture" style="width: 100vw; height: 360px;">
+<header class="w3-container w3-center w3-white projectDetail" style="width: 100vw; height: 320px;">
   <div class="w3-auto">
-      <h1 class="w3-text-black">Friendly but Still Professional</h1>
+    <h1 class="w3-text-black">장흥군 노력항 브랜드 개발</h1>
+    <!--
+    <div class="projectBrief">
+      <div class="brief1 w3-left-align">
+        <h3 class="w3-padding-8 w3-medium">시간 및 공간적 범위</h3>
+        <h6>위치 | 충남 태안군 남면 신온1리 마검포항</h6>
+        <h6>사업면적 | 580㎢</h6>
+        <h6>어항명 | 마검포항(지방어항)</h6>
+        <h6>사업기간 | 2021-2022</h6>
+      </div>
+      <div class="brief2 w3-left-align">
+        <h3 class="w3-padding-8 w3-medium">내용적 범위</h3>
+        <h6>대상지 지역자원 조사 및 현황 분석</h6>
+        <h6>단위사업별 기본계획 수립</h6>
+        <h6>소요예산 배분 및 연도별 실행계획 제시</h6>
+        <h6>투자효과 전망 제시 및 건축기획 업무</h6>
+      </div>
+      <div class="brief3 w3-left-align">
+        <h3 class="w3-padding-8 w3-medium">발주처</h3>
+        <h6>한국어촌어항공단</h6>
+      </div>
+    </div>
+  -->
   </div>
 </header>
 
 
 <!-- First Grid -->
-<section id="grid1-1" class="grid1-3 w3-container w3-text-black" style="padding-top: 0px; padding-bottom: 120px; padding-right: 0;">
+<section id="grid1-3" class="grid1-3 w3-text-black" style="width: 100%">
   <div class="w3-auto">
-    <iframe width="100%" height="500px" src="https://www.youtube.com/embed/wCJPIePcLr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+    <div class="p_contents">
+      <img src="../images/nr1.jpg">
+      <img src="../images/nr2.jpg">
+      <img src="../images/nr3.jpg">
+      <img src="../images/nr4.jpg">
+      <img src="../images/nr5.jpg">
+      <img src="../images/nr5-1.jpg">
+      <img src="../images/nr6.jpg">
+      <img src="../images/nr7.jpg">
+    </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-black w3-center">  
   <div class="w3-auto w3-left-align">
     <div class="w3-half">
@@ -114,32 +156,16 @@ function scrollFunction() {
     </div>
     <div class="w3-half w3-right-align">
       <div class="w3-bar">
-        <a href="about.html" class="w3-bar-item w3-medium">About</a>
-        <a href="work.html" class="w3-bar-item w3-medium">Work</a>
-        <a href="culture.html" class="w3-bar-item w3-medium">Culture</a>
-        <a href="contact.html" class="w3-bar-item w3-medium">Contact</a>
+        <a href="../about.html" class="w3-bar-item w3-medium">About</a>
+        <a href="../work.html" class="w3-bar-item w3-medium">Work</a>
+        <a href="../culture.html" class="w3-bar-item w3-medium">Culture</a>
+        <a href="../contact.html" class="w3-bar-item w3-medium">Contact</a>
       </div>
       <p class="w3-small" style="margin: 0; padding-right: 10px">Copyright ⓒ Human&Space. All Rights Reserved.</p>
     </div>
 
   </div>
 </footer>
-
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function background() {
-
-}
-
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
 
 </body>
 </html>

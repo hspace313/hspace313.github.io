@@ -360,11 +360,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 
 .w3-top {
-	transition: 0.4s;
+	transition: 0.5s;
 }
 
 .w3-top img {
 	width: 120px;
+	height: auto;
 	filter: brightness(0) invert(1);
 	transition: 0.1s;
 }
@@ -463,16 +464,46 @@ header.about .w3-col {
 }
 
 
-header.contact h1, header.culture h1 {
+header.contact h1, header.culture h1, header.projectDetail h1 {
 	position: inherit;
 	padding-top: 200px;
 }
 
-header.contact h3 {
+header.contact h3{
 	padding-top: 20px;
 }
 
 
+header.projectDetail h1 {
+	width: 100%;
+}
+
+.projectBrief {
+	padding-top: 30px;
+}
+
+.projectBrief h3 {
+	font-weight: 700;
+}
+
+.brief1, .brief2, .brief3 {
+	display: inline-block;
+	float: left;
+	width: 33.3%;
+}
+
+.brief1, .brief2 {
+	border-right: 1.5px solid black;
+}
+
+.brief2, .brief3 {
+	padding-left: 60px;
+}
+
+header h6 {
+	margin: 5px 0;
+	font-size: 14px;
+}
 
 /*----- grid 1 ------*/
 
@@ -485,21 +516,25 @@ header.contact h3 {
 }
 
 .grid1 .left, .grid1-1 .left {
-	padding-right: 100px;
+	padding-right: 40px;
+}
 
+.grid1 .right, .grid1-1 .right {
+	padding-left: 40px;
+}
+
+.grid1 h2 {
+	letter-spacing: -0.5px;
 }
 
 .grid1 h2, .grid1-1 h2 {
 	font-size: 46px;
-}
-
-.grid1 h3 {
-	padding-left: 5px;
+	margin: 3px 0;
 }
 
 
-.grid1-1 h3 {
-	padding: 20px 0;
+.grid1 h3, .grid1-1 h3 {
+	padding: 20px 0 20px 4px;
 }
 
 .grid1-1 img {
@@ -589,7 +624,7 @@ header.contact h3 {
 	position: relative;
 }
 
-h5.overlay_txt {
+h4.overlay_txt {
 	color: white;
 	font-size: 30px;
 }
@@ -600,6 +635,20 @@ p.overlay_txt {
     bottom: 30px;
 }
 
+
+.grid1-3 img{
+	width: 100%;
+}
+
+.p_contents {
+	display: grid;
+    grid-template-columns: auto auto;
+    padding-bottom: 10%;
+}
+
+.p_contents img{
+	display: inline-block;
+}
 
 /*----- grid 2 ------*/
 
@@ -682,6 +731,9 @@ footer .w3-bar .w3-bar-item {
 	padding: 15px 12px 8px 12px;
 }
 
+footer a {
+	text-decoration: none;
+}
 
 body,h1,h2,h3,h4,h5,h6 {font-family: "IBM Plex Sans KR", sans-serif}
 h2 {font-weight: 400}
