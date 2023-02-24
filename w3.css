@@ -502,6 +502,9 @@ header.contact h3{
 	padding-top: 20px;
 }
 
+header.projectDetail {
+	margin-bottom: 40px;
+}
 
 header.projectDetail h1 {
 	width: 100%;
@@ -534,6 +537,13 @@ header h6 {
 	font-size: 14px;
 }
 
+
+header #map {
+	width: 100%;
+	height: 400px;
+	margin-top: 210px
+}
+
 @media (max-width:993px){
 	header.projectDetail h1 {
     	position: inherit;
@@ -555,8 +565,6 @@ header h6 {
 	.brief3 {
 		padding-bottom: 30px;
 	}
-
-	
 }
 
 @media (max-width:601px){
@@ -594,6 +602,10 @@ header h6 {
 
 	.projectBrief h3 {
     	padding-top: 10px;
+	}
+
+	header #map {
+		margin-top: 100px;
 	}
 }
 
@@ -972,6 +984,7 @@ footer a {
 @media (max-width:601px){
 
 	footer {
+	display: inline-block;
 	padding: 10px 0px 10px 0px !important;
 }
 
