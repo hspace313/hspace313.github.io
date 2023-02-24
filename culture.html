@@ -12,7 +12,7 @@
 <style>
 h2{font-weight: 800}
 h3 {letter-spacing: 1px; font-family: "Poppins", sans-serif; font-weight: 600}
-h1, .w3-bar, h5, button{font-family: "Work Sans", sans-serif; font-weight: 400}
+h1, .w3-bar, a, h5, button{font-family: "Work Sans", sans-serif; font-weight: 400}
 h4 {font-family: "Work Sans", sans-serif;
     text-align: left;
     font-size: 30px;
@@ -27,6 +27,14 @@ h4 {font-family: "Work Sans", sans-serif;
   font-size: 44px;
   margin-top: -2px;
   margin-left: -5px;
+}
+
+.w3-top .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 300,
+  'opsz' 48;
 }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
@@ -49,20 +57,42 @@ $(document).ready(function(){
 
 });
 
-window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
+window.onscroll = function() {navFunction()};
+const navitemColor = [0, 0];
 
+function navFunction() {
 
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+  if (document.body.scrollTop > 80|| document.documentElement.scrollTop > 80) {
     document.getElementsByClassName("w3-top")[0].style.backgroundColor = "rgb(255, 255, 255, 1)"
-    document.getElementById("logoimg").style.filter = "none"
 
     for (i = 0; i < 4; i++) {
       document.getElementsByClassName("navitem")[i].style.color = "rgb(0, 0, 0)"
     }
 
-  } 
+  } else {
+
+
+    document.getElementsByClassName("w3-top")[0].style.backgroundColor = "rgba(0, 0, 0, 0)"
+
+  }
+}
+
+
+function myFunction() {
+  var x = document.getElementById("navSM");
+
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+  const bg = document.querySelector("div.w3-top > div");
+  const logoimg = bg.childNodes.item(3).querySelector("img");
+  bg.classList.toggle("makewhite");
+  logoimg.classList.toggle("logofilter");
+  bg.querySelector("a").classList.toggle("w3-text-black");
+
 }
 
 
@@ -72,8 +102,8 @@ function scrollFunction() {
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-left-align w3-medium" style="background-color: rgba(0, 0, 0, 0);">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-large w3-cobalt" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  <div class="w3-bar w3-left-align w3-medium">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><span class="material-symbols-outlined" style="font-size: 24px;">menu</span></a>
     <a href="index.html" class="w3-bar-item"><img id="logoimg" style="filter: none;"src="images/logo.png"></a>
     <a href="contact.html" class="w3-bar-item w3-hide-small w3-right"><h5>Contact</h5></a>
     <a href="culture.html" class="w3-bar-item w3-hide-small w3-right"><h5>Culture</h5></a>
@@ -82,7 +112,7 @@ function scrollFunction() {
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-medium">
+  <div id="navSM" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-medium">
     <a href="about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href="work.html" class="w3-bar-item w3-button w3-padding-large">Work</a>
     <a href="culture.html" class="w3-bar-item w3-button w3-padding-large">Culture</a>
@@ -100,7 +130,7 @@ function scrollFunction() {
 
 
 <!-- First Grid -->
-<section id="grid1-1" class="grid1-3 w3-container w3-text-black" style="padding-top: 0px; padding-bottom: 120px; padding-right: 0;">
+<section id="grid1-1" class="grid1-3 w3-text-black" style="padding-top: 0px; padding-bottom: 120px; padding-right: 0;">
   <div class="w3-auto">
     <iframe width="100%" height="500px" src="https://www.youtube.com/embed/wCJPIePcLr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
   </div>
@@ -124,22 +154,6 @@ function scrollFunction() {
 
   </div>
 </footer>
-
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function background() {
-
-}
-
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
 
 </body>
 </html>

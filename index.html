@@ -31,6 +31,16 @@ h4 {font-family: "Work Sans", sans-serif;
 
   font-size: 50px;
 }
+
+.w3-top .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 300,
+  'opsz' 48;
+}
+
+
 </style>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -52,22 +62,26 @@ $(document).ready(function(){
 
 });
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {navFunction()};
+const navitemColor = [0, 0];
 
-function scrollFunction() {
+function navFunction() {
 
-
-  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > window.innerHeight) {
+  if (document.body.scrollTop > window.innerHeight|| document.documentElement.scrollTop > window.innerHeight) {
     document.getElementsByClassName("w3-top")[0].style.backgroundColor = "rgb(255, 255, 255, 1)"
     document.getElementById("logoimg").style.filter = "none"
+    document.getElementsByClassName("menu")[0].style.color = "black"
 
     for (i = 0; i < 4; i++) {
       document.getElementsByClassName("navitem")[i].style.color = "rgb(0, 0, 0)"
     }
 
   } else {
+
+
     document.getElementsByClassName("w3-top")[0].style.backgroundColor = "rgba(0, 0, 0, 0)"
-    document.getElementById("logoimg").style.filter = "brightness(600%)"
+    document.getElementById("logoimg").style.filter = "brightness(0) invert(1)"
+    document.getElementsByClassName("menu")[0].style.color = "white"
 
     for (i = 0; i < 4; i++) {
       document.getElementsByClassName("navitem")[i].style.color = "rgb(255, 255, 255)"
@@ -76,14 +90,23 @@ function scrollFunction() {
   }
 }
 
+
 function myFunction() {
-  var x = document.getElementById("navDemo");
+  var x = document.getElementById("navSM");
+
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
   } else { 
     x.className = x.className.replace(" w3-show", "");
   }
+  const bg = document.querySelector("div.w3-top > div");
+  const logoimg = bg.childNodes.item(3).querySelector("img");
+  bg.classList.toggle("makewhite");
+  logoimg.classList.toggle("logofilter");
+  bg.querySelector("a").classList.toggle("w3-text-black");
+
 }
+
 
 </script>
 </head>
@@ -91,8 +114,8 @@ function myFunction() {
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-left-align w3-medium" style="background-color: rgba(0, 0, 0, 0);">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-large w3-cobalt" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  <div class="w3-bar w3-left-align w3-medium">
+    <a class="menu w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><span class="material-symbols-outlined" style="font-size: 24px;">menu</span></a>
     <a href="index.html" class="w3-bar-item" title="main"><img id="logoimg" src="images/logo.png" alt="사람과공간 로고"></a>
     <a href="contact.html" class="w3-bar-item w3-hide-small navitem w3-right" title="contact"><h5>Contact</h5></a>
     <a href="culture.html" class="w3-bar-item w3-hide-small navitem w3-right" title="culture"><h5>Culture</h5></a>
@@ -101,7 +124,8 @@ function myFunction() {
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-medium">
+  <div id="navSM" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-medium">
+
     <a href="about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href="work.html" class="w3-bar-item w3-button w3-padding-large">Work</a>
     <a href="culture.html" class="w3-bar-item w3-button w3-padding-large">Culture</a>
@@ -126,7 +150,7 @@ function myFunction() {
 
 
 <!-- First Grid -->
-<section id="grid1" class="grid1 w3-container w3-text-white" style="padding-top: 150px; padding-bottom: 0px; height:670px;">
+<section id="grid1" class="grid1 w3-container w3-text-white" style="padding-top: 10%; padding-bottom: 0px; height:670px;">
   <div class="w3-auto">
     <h3 class="w3-padding-8 w3-margin-top w3-medium">ABOUT HUMAN&SPACE</h3>
     <div class="w3-half left">
@@ -141,7 +165,7 @@ function myFunction() {
   
 </section>
 
-<section class="grid2 w3-row-padding w3-container" style="margin-top: -120px">
+<section class="grid2" style="margin-top: -120px; padding-bottom: 5%;">
   <div class="w3-auto">
     <div class="w3-col m8 l8">
       <div class="image-fill">
@@ -161,8 +185,8 @@ function myFunction() {
         <img class="image-hover" src="images/th1.png" alt="태흥2리">
       </div>
     </div>
-    <div class="w3-col m8 l8">
-      <div class="image-fill" style="height: 800px"x>
+    <div class="w3-col m8 l8 mainpic">
+      <div class="image-fill">
         <img class="image-hover" src="images/yj2.jpg" alt="영진항">
       </div>
     </div>
@@ -194,26 +218,26 @@ function myFunction() {
 
 <!-- Third Grid -->
 <section class="grid3 w3-row-padding w3-container">
-  <div class="w3-auto w3-padding-32">
-      <h3 class="w3-margin-bottom w3-large w3-center w3-text-theme-d1" style="padding: 20px 0">CAPABILITIES</h3>
-      <div class="w3-col l4 w3-center" style="margin-bottom: 80px">
-        <div class="w3-container w3-black" style="margin-right:12px">
+  <div class="w3-auto" style="padding-top: 8%;">
+      <h3 class="w3-margin-bottom w3-medium w3-center w3-text-theme-d1" style="padding: 20px 0">CAPABILITIES</h3>
+      <div class="w3-col l4 w3-center">
+        <div class="w3-container w3-black cap1">
           <span class="material-symbols-outlined icons">domain_add</span>
           <h4>Space Planning</h4>
           <p>지역개발, 도시재생 및 건축계획 프로젝트를 진행합니다.</p>
           <a href="work.html" class="w3-button w3-medium w3-left" style="padding: 0" title="work_planning"><span class="material-symbols-outlined w3-button" style="padding: 0 10px 0 0; font-size: 36px;">trending_flat</span>view more</a>
         </div>
       </div>
-      <div class="w3-col l4 w3-center" style="margin-bottom: 80px">
-        <div class="w3-container w3-black" style="margin-left:12px; margin-right:12px">
+      <div class="w3-col l4 w3-center">
+        <div class="w3-container w3-black cap2">
           <span class="material-symbols-outlined icons">design_services</span>
           <h4>Branding</h4>
           <p>종합디자인 및 지역 홍보마켓팅과 지역특화상품개발 프로젝트를 진행합니다. </p>
           <a href="work.html" class="w3-button w3-medium w3-left" style="padding: 0" title="work_Branding"><span class="material-symbols-outlined w3-button" style="padding: 0 10px 0 0; font-size: 36px;">trending_flat</span>view more</a>
         </div>
       </div>
-      <div class="w3-col l4 w3-center" style="margin-bottom: 80px">
-        <div class="w3-container w3-black " style="margin-left:12px">
+      <div class="w3-col l4 w3-center">
+        <div class="w3-container w3-black cap3">
           <span class="material-symbols-outlined icons">diversity_3</span>
           <h4>Consulting</h4>
           <p>지역역량강화사업  공동체활성화, 문화관광 프로젝트 등을 진행합니다.</p>
@@ -223,15 +247,15 @@ function myFunction() {
   </div>
 </section>
 
-<section class="footer w3-container w3-center w3-padding-64">
+<section class="footer w3-container w3-center">
   <div class="w3-content w3-padding-large">
-    <h6 class="w3-margin w3-text-white w3-xlarge w3-center">사람과공간은 그동안 쌓아온 기술을 바탕으로 공간을 기획하는 전문기업입니다. 우리의 힘은 지역민의 격려와 응원이며, 우리의 보답은 믿음과 신뢰입니다. 이를 지키는 올바른 기업으로 함께 하겠습니다.</h6>
+    <h6 class="w3-margin w3-text-white w3-center">사람과공간은 그동안 쌓아온 기술을 바탕으로 공간을 기획하는 전문기업입니다. 우리의 힘은 지역민의 격려와 응원이며, 우리의 보답은 믿음과 신뢰입니다. 이를 지키는 올바른 기업으로 함께 하겠습니다.</h6>
   </div>
 </section>
 
 
 <!-- Footer -->
-<footer class="w3-black w3-center">  
+<footer class="w3-black w3-center w3-container">  
   <div class="w3-auto w3-left-align">
     <div class="w3-half">
       <p>(주)사람과공간</p>

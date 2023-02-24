@@ -363,6 +363,18 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 	transition: 0.5s;
 }
 
+.w3-top div.makewhite {
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.w3-top .w3-bar {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.menu {
+	color: #FFF;
+}
+
 .w3-top img {
 	width: 120px;
 	height: auto;
@@ -375,6 +387,10 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 	padding: 25px 30px 20px 30px;
 }
 
+.w3-top img.logofilter {
+	filter: none !important;
+}
+
 /*--
 .w3-top a.w3-bar-item:hover{
 	background-color: rgba(0, 0, 0, 0);
@@ -383,6 +399,18 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 	text-decoration-style: wavy;
 }
 --*/
+
+
+@media (max-width:601px){
+	
+	.w3-top a.w3-bar-item{
+		padding: 20px;
+	}
+
+
+}
+
+
 .navitem {
 	color: white;
 }
@@ -397,6 +425,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-top h5:hover {
 	border-bottom: solid;
 }
+
 
 /*----- header ------*/
 
@@ -503,6 +532,69 @@ header.projectDetail h1 {
 header h6 {
 	margin: 5px 0;
 	font-size: 14px;
+}
+
+@media (max-width:993px){
+	header.projectDetail h1 {
+    	position: inherit;
+    	padding-top: 150px;
+	}
+
+	.brief1, .brief2 {
+		border-right: none;
+	}
+
+	.brief2, .brief3 {
+		padding-left: 0;
+	}
+
+	.brief1, .brief2, .brief3 {
+		width: 50%;
+	}
+
+	.brief3 {
+		padding-bottom: 30px;
+	}
+
+	
+}
+
+@media (max-width:601px){
+	
+	header h1 {
+    	font-size: 30px;
+    	width: 100%;
+	}
+
+	.movdown {
+		display: none;
+	}
+
+
+	header.projectDetail h1 {
+    	padding-top: 100px;
+	}
+
+	header.about h1, header.work h1 {
+		text-align: center;
+	}
+
+
+	.projectBrief {
+		padding: 0;
+	}
+
+	.brief2, .brief3 {
+		padding-left: 0;
+	}
+
+	.brief1, .brief2, .brief3 {
+		width: 100%;
+	}
+
+	.projectBrief h3 {
+    	padding-top: 10px;
+	}
 }
 
 /*----- grid 1 ------*/
@@ -640,6 +732,11 @@ p.overlay_txt {
 	width: 100%;
 }
 
+.grid1-3 h3.w3-medium.w3-padding-16 {
+	font-weight: 700;
+}
+
+
 .p_contents {
 	display: grid;
     grid-template-columns: auto auto;
@@ -649,6 +746,72 @@ p.overlay_txt {
 .p_contents img{
 	display: inline-block;
 }
+
+@media (max-width:993px){
+
+	.grid1-3 h3.w3-medium.w3-padding-16 {
+		padding-left: 16px;
+		display: inline-block;
+	    width: 100%;
+
+	}
+
+	.p_contents {
+    	padding-bottom: 0;
+	}
+}
+
+
+@media (max-width:601px){
+	
+	.grid1 h2, .grid1-1 h2 {
+		font-size: 30px;
+		margin: 0;
+	}
+
+	.grid1 .left, .grid1-1 .left {
+		padding-right: 0;
+	}
+
+	.grid1 .right, .grid1-1 .right {
+		padding-left: 0;
+	}
+
+	.grid1-1 .w3-row img {
+	    padding: 0px 20px;
+	}
+
+	.grid1-2 {
+		text-align: center;
+	}
+
+	.grid1-2 .image-fill {
+		overflow: hidden;
+		height: 200px;
+	} 
+
+	.project {
+		display: grid;
+	    grid-gap: 10px;
+	    grid-template-columns: repeat(2, 1fr);
+	    padding-bottom: 10px;
+	}
+
+	.overlay {
+	  	padding: 20px;
+		text-align: left;
+	}
+
+	h4.overlay_txt {
+		font-size: 20px;
+	}
+
+	p.overlay_txt {
+		position: inherit;
+	}
+}
+
+
 
 /*----- grid 2 ------*/
 
@@ -676,10 +839,29 @@ p.overlay_txt {
 }
 
 
+.grid2 .mainpic .image-fill {
+	height: 800px;
+}
+
+
+@media (max-width:601px){
+	
+	.grid2 .w3-container, .grid2 .w3-row-padding {
+		padding: 0;
+	}
+
+	.grid2 .mainpic .image-fill {
+		height: 400px;
+	}
+
+
+}
+
+
 /*----- grid 3 ------*/
 
 .grid3 {
-	padding: 100px 0 80px 0;
+	padding: 80px 0;
 }
 
 .grid3 .icons {
@@ -698,6 +880,43 @@ p.overlay_txt {
 	padding: 30px 40px;
 }
 
+.grid3 .w3-col {
+	margin-bottom: 80px;
+}
+
+.cap1, .cap2{
+	margin-right:12px;
+}
+
+.cap2, .cap3 {
+	margin-left:12px;
+}
+
+@media (max-width:993px){
+
+	.grid3 {
+		background: #000;
+		padding: 40px 0;
+	}
+	
+	.grid3 h3 {
+		color: #FFF !important;
+	}
+
+	.grid3 .w3-col {
+		margin-bottom: 0;
+	}
+
+	.cap1, .cap2{
+		margin-right: 0;
+	}
+
+	.cap2, .cap3 {
+		margin-left: 0;
+	}
+
+}
+
 
 section.footer {
 	background-blend-mode: multiply;
@@ -709,6 +928,7 @@ section.footer {
   	background-position: center;
   	background-repeat: no-repeat;
   	background-size: cover;
+  	padding: 60px 0;
 }
 
 section.footer h6 {
@@ -717,6 +937,18 @@ section.footer h6 {
 }
 
 
+@media (max-width:993px){
+	section.footer {
+		padding: 20px 0;
+	}
+
+	section.footer h6 {
+		font-size: 20px;
+		padding: 0; 
+	}
+
+}
+
 @media only screen and (max-device-width: 1366px) {
   section.footer {
     background-attachment: scroll;
@@ -724,7 +956,8 @@ section.footer h6 {
 }
 
 footer {
-	padding: 80px 0px 160px 0px;
+	padding-top: 80px !important;
+	padding-bottom: 80px !important;
 }
 
 footer .w3-bar .w3-bar-item {
@@ -733,6 +966,28 @@ footer .w3-bar .w3-bar-item {
 
 footer a {
 	text-decoration: none;
+}
+
+
+@media (max-width:601px){
+
+	footer {
+	padding: 10px 0px 10px 0px !important;
+}
+
+	footer div.w3-half{
+		text-align: center !important;
+	}
+
+	footer .w3-left-align {
+		padding-top: 20px;
+	}
+
+	footer .w3-right-align p{
+		padding-bottom: 40px;
+	}
+
+
 }
 
 body,h1,h2,h3,h4,h5,h6 {font-family: "IBM Plex Sans KR", sans-serif}

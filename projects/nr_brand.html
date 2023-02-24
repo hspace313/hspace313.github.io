@@ -14,7 +14,7 @@
 h1{font-weight: 500};
 h2{font-weight: 800}
 h3 {letter-spacing: 1px; font-family: "Poppins", sans-serif; font-weight: 600}
-.w3-bar, h5, button{font-family: "Work Sans", sans-serif; font-weight: 400}
+.w3-bar, h5, a, button{font-family: "Work Sans", sans-serif; font-weight: 400}
 h4 {font-family: "Work Sans", sans-serif;
     text-align: left;
     font-size: 30px;
@@ -22,58 +22,43 @@ h4 {font-family: "Work Sans", sans-serif;
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
-  'wght' 300,
-  'GRAD' 0,
+  'wght' 400,
+  'GRAD' 300,
   'opsz' 48;
-
-  font-size: 44px;
-  margin-top: -2px;
-  margin-left: -5px;
 }
 </style>
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
 <script type="text/javascript">
-$(document).ready(function(){
-
-  $("#arrow").click(function() {
-
-    $('html, body').animate({
-        scrollTop: $("#grid1").offset().top
-    }, 0);
-  });
-});
-
-$(document).ready(function(){
-  $( ".discover" ).click(function() {
-    var x = $(window).scrollTop();
-     $('html, body').animate({ scrollTop: x + $(window).height() }) 
-  });
-
-});
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
 
 
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+window.onscroll = function() {navFunction()};
+const navitemColor = [0, 0];
+
+function navFunction() {
+
+  if (document.body.scrollTop > 40|| document.documentElement.scrollTop > 40) {
     document.getElementsByClassName("w3-top")[0].style.backgroundColor = "rgb(255, 255, 255, 1)"
-    document.getElementById("logoimg").style.filter = "none"
 
-    for (i = 0; i < 4; i++) {
-      document.getElementsByClassName("navitem")[i].style.color = "rgb(0, 0, 0)"
-    }
-
-  } 
+  } else {
+    document.getElementsByClassName("w3-top")[0].style.backgroundColor = "rgba(0, 0, 0, 0)"
+  }
 }
 
+
 function myFunction() {
-  var x = document.getElementById("navDemo");
+  var x = document.getElementById("navSM");
+
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
   } else { 
     x.className = x.className.replace(" w3-show", "");
   }
+  const bg = document.querySelector("div.w3-top > div");
+  const logoimg = bg.childNodes.item(3).querySelector("img");
+  bg.classList.toggle("makewhite");
+  logoimg.classList.toggle("logofilter");
+  bg.querySelector("a").classList.toggle("w3-text-black");
+
 }
 
 </script>
@@ -82,8 +67,8 @@ function myFunction() {
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-left-align w3-medium" style="background-color: rgba(0, 0, 0, 0);">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-large w3-cobalt" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  <div class="w3-bar w3-left-align w3-medium">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><span class="material-symbols-outlined" style="font-size: 24px;">menu</span></a>
     <a href="../index.html" class="w3-bar-item"><img id="logoimg" style="filter: none;"src="../images/logo.png"></a>
     <a href="../contact.html" class="w3-bar-item w3-hide-small w3-right"><h5>Contact</h5></a>
     <a href="../culture.html" class="w3-bar-item w3-hide-small w3-right"><h5>Culture</h5></a>
@@ -92,7 +77,7 @@ function myFunction() {
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-medium">
+  <div id="navSM" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-medium">
     <a href="../about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href="../work.html" class="w3-bar-item w3-button w3-padding-large">Work</a>
     <a href="../culture.html" class="w3-bar-item w3-button w3-padding-large">Culture</a>
@@ -100,9 +85,8 @@ function myFunction() {
   </div>
 </div>
 
-
 <!-- Header -->
-<header class="w3-container w3-center w3-white projectDetail" style="width: 100vw; height: 320px;">
+<header class="w3-container w3-center w3-white projectDetail" style="width: 100vw; height: 180px;">
   <div class="w3-auto">
     <h1 class="w3-text-black">장흥군 노력항 브랜드 개발</h1>
     <!--

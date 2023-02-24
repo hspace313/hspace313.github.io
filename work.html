@@ -20,14 +20,21 @@ h1, .w3-bar, a, button, h5{font-family: "Work Sans", sans-serif; font-weight: 40
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
-  'wght' 300,
-  'GRAD' 0,
+  'wght' 200,
+  'GRAD' 300,
   'opsz' 48;
 
-  font-size: 44px;
-  margin-top: -2px;
-  margin-left: -5px;
+  font-size: 50px;
 }
+
+.w3-top .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 300,
+  'opsz' 48;
+}
+
 </style>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -49,22 +56,26 @@ $(document).ready(function(){
 
 });
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {navFunction()};
+const navitemColor = [0, 0];
 
-function scrollFunction() {
+function navFunction() {
 
-
-  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+  if (document.body.scrollTop > 360|| document.documentElement.scrollTop > 360) {
     document.getElementsByClassName("w3-top")[0].style.backgroundColor = "rgb(255, 255, 255, 1)"
     document.getElementById("logoimg").style.filter = "none"
+    document.getElementsByClassName("menu")[0].style.color = "black"
 
     for (i = 0; i < 4; i++) {
       document.getElementsByClassName("navitem")[i].style.color = "rgb(0, 0, 0)"
     }
 
   } else {
+
+
     document.getElementsByClassName("w3-top")[0].style.backgroundColor = "rgba(0, 0, 0, 0)"
-    document.getElementById("logoimg").style.filter = "brightness(600%)"
+    document.getElementById("logoimg").style.filter = "brightness(0) invert(1)"
+    document.getElementsByClassName("menu")[0].style.color = "white"
 
     for (i = 0; i < 4; i++) {
       document.getElementsByClassName("navitem")[i].style.color = "rgb(255, 255, 255)"
@@ -74,15 +85,31 @@ function scrollFunction() {
 }
 
 
+function myFunction() {
+  var x = document.getElementById("navSM");
+
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+  const bg = document.querySelector("div.w3-top > div");
+  const logoimg = bg.childNodes.item(3).querySelector("img");
+  bg.classList.toggle("makewhite");
+  logoimg.classList.toggle("logofilter");
+  bg.querySelector("a").classList.toggle("w3-text-black");
+
+}
+
 </script>
 </head>
 <body>
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-left-align w3-medium" style="background-color: rgba(0, 0, 0, 0);">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-large w3-cobalt" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html" class="w3-bar-item"><img id="logoimg" src="images/logo.png"></a>
+  <div class="w3-bar w3-left-align w3-medium">
+    <a class="menu w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><span class="material-symbols-outlined" style="font-size: 24px;">menu</span></a>
+    <a href="index.html" class="w3-bar-item" title="main"><img id="logoimg" src="images/logo.png" alt="사람과공간 로고"></a>
     <a href="contact.html" class="w3-bar-item w3-hide-small navitem w3-right" title="contact"><h5>Contact</h5></a>
     <a href="culture.html" class="w3-bar-item w3-hide-small navitem w3-right" title="culture"><h5>Culture</h5></a>
     <a href="work.html" class="w3-bar-item w3-hide-small navitem w3-right" title="work"><h5>Work</h5></a>
@@ -90,7 +117,8 @@ function scrollFunction() {
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-medium">
+  <div id="navSM" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-medium">
+
     <a href="about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
     <a href="work.html" class="w3-bar-item w3-button w3-padding-large">Work</a>
     <a href="culture.html" class="w3-bar-item w3-button w3-padding-large">Culture</a>
@@ -100,7 +128,7 @@ function scrollFunction() {
 
 
 <!-- Header  -->
-<header class="w3-container w3-center about" style="width: 100vw; height: 400px;">
+<header class="w3-center about" style="width: 100vw; height: 400px;">
   <video class="background_v" autoplay muted loop style="width:100vw; height: 400px;">
         <source src="images/clip01.mp4" type="video/mp4">
   </video>
@@ -307,14 +335,6 @@ function image_filter(name) {
 
 // Used to toggle the menu on small screens when clicking on the menu button
 
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
 </script>
 
 </body>
