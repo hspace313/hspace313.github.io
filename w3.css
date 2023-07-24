@@ -643,6 +643,7 @@ header #map {
 
 .grid1-1 img {
 	width: 100%;
+	padding: 0 10%;
 }
 
 .grid1-1 .w3-content {
@@ -650,12 +651,12 @@ header #map {
 }
 
 
-.grid1-1 .w3-row {
+.grid1-1 .partners .w3-row {
 	padding: 20px 0;
 }
 
-.grid1-1 .w3-row img {
-	padding: 10px 50px;
+.grid1-1 .partners .w3-row img {
+	padding: 10px 15%;
 } 
 
 .image-fill img{
@@ -1002,8 +1003,60 @@ footer a {
 
 }
 
+.profileGrid {
+	width: calc(20% - 4px);
+    display: inline-flex;
+    align-content: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.profileGrid h4 {
+	font-size: 14px;
+	margin-bottom: 0;
+    font-weight: 500;
+    width: 100%;
+}
+
+.profileGrid p {
+	font-size: 14px;
+	color: #999;
+	margin: 0 0 20px 0;
+    font-weight: 300;
+    width: 100%;
+}
+
+.profileGrid img {
+	padding: 0;
+
+}
+
+
+@media (max-width:993px){
+
+	.profileGrid {
+		width: calc(25% - 2.75px);
+	}
+
+}
+
+@media (max-width:601px){
+	.profileGrid {
+		width: calc(50% - 2px);
+	}
+
+
+	.grid1-1 .w3-row .profileGrid img {
+    	padding: 0;
+	}
+
+}
+
+
 body,h1,h2,h3,h4,h5,h6 {font-family: "IBM Plex Sans KR", sans-serif}
 h2 {font-weight: 400}
+
 
 
 
