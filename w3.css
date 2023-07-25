@@ -380,6 +380,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 	height: auto;
 	filter: brightness(0) invert(1);
 	transition: 0.1s;
+
 }
 
 .w3-top a.w3-bar-item{
@@ -930,7 +931,7 @@ p.overlay_txt {
 }
 
 
-section.footer {
+section.greeting {
 	background-blend-mode: multiply;
 	background-color: #999;
 	background-image: url("images/hd2.jpg");
@@ -943,18 +944,18 @@ section.footer {
   	padding: 60px 0;
 }
 
-section.footer h6 {
+section.greeting h6 {
 	font-size: 30px;
 	padding: 40px; 
 }
 
 
 @media (max-width:993px){
-	section.footer {
+	section.greeting {
 		padding: 20px 0;
 	}
 
-	section.footer h6 {
+	section.greeting h6 {
 		font-size: 20px;
 		padding: 0; 
 	}
@@ -962,7 +963,7 @@ section.footer h6 {
 }
 
 @media only screen and (max-device-width: 1366px) {
-  section.footer {
+  section.greeting {
     background-attachment: scroll;
   }
 }
@@ -973,11 +974,30 @@ footer {
 }
 
 footer .w3-bar .w3-bar-item {
-	padding: 15px 12px 8px 12px;
+	padding: 0px 12px 8px 12px;
 }
 
 footer a {
 	text-decoration: none;
+}
+
+
+footer img {
+	width: 100px;
+    filter: brightness(0) invert(1);
+}
+
+footer .kangwon, footer .seoul{
+	
+}
+
+footer p {
+	margin: 0;
+	font-weight: 300;
+}
+
+footer p.location {
+	font-weight: 500;
 }
 
 
